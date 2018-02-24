@@ -6,13 +6,13 @@ import org.codex.uom.letmehack.user.User;
 import org.codex.uom.letmehack.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.websocket.server.PathParam;
 
 /**
  * Created by TJR on 2/24/2018.
@@ -40,5 +40,11 @@ public class AvatarController {
             errorMessage.setDeveloperMessage(e.toString());
             return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.valueOf(500));
         }
+    }
+
+    @GetMapping("avatars")
+    public ResponseEntity<byte[]> getAvatarById(@RequestParam("user_id") Long userId){
+        byte[] image =  avatarService.getImageById(userId);
+        return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(image);
     }
 }
