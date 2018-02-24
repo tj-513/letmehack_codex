@@ -15,7 +15,7 @@ public class FacultyService {
 
         //do validations here
         Faculty existing = facultyRespository.findByName(faculty.getName());
-        if(existing == null){
+        if(existing != null){
             throw new FacultyExistsException();
         }
         facultyRespository.save(faculty);

@@ -21,6 +21,18 @@ public class User {
     private String name;
     @JsonProperty("email")
     private String email;
+    @JsonProperty("mobile")
+    private String mobile;
+    @JsonProperty("role")
+    private String role;
+    @JsonProperty("faculty_id")
+    private String faculty_id;
+    @JsonProperty("department_id")
+    private String department_id;
+    @JsonProperty("degree_id")
+    private String degree_id;
+    @JsonProperty("batch")
+    private String batch;
 
     @JsonIgnore
     private String avatarUrl;
@@ -65,5 +77,53 @@ public class User {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getFaculty_id() {
+        return faculty_id;
+    }
+
+    public void setFaculty_id(String faculty_id) {
+        this.faculty_id = faculty_id;
+    }
+
+    public String getDepartment_id() {
+        return department_id;
+    }
+
+    public void setDepartment_id(String department_id) {
+        this.department_id = department_id;
+    }
+
+    public String getDegree_id() {
+        return degree_id;
+    }
+
+    public void setDegree_id(String degree_id) {
+        this.degree_id = degree_id;
+    }
+
+    public String getBatch() {
+        return batch;
+    }
+
+    public void setBatch(String batch) {
+        this.batch = batch;
     }
 }

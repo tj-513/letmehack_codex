@@ -7,8 +7,5 @@ import org.springframework.stereotype.Repository;
  * Created by TJR on 2/24/2018.
  */
 public interface UserRespository extends CrudRepository<User, Long>{
-
-
-
-
+    public User findOneByEmail(String email);
 }
