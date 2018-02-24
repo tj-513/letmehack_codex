@@ -23,7 +23,7 @@ public class AvatarController {
     @Autowired
     private AvatarService avatarService;
     @PostMapping("/avatars")
-    public ResponseEntity<?> addAvatar(@RequestParam("file") MultipartFile file, @RequestParam("user_id") Long userId) {
+    public ResponseEntity<?> addAvatar(@RequestParam("avatar") MultipartFile file, @RequestParam("user_id") Long userId) {
         try {
             if(userId == null){
                 // todo: update avatar of authenticated user
