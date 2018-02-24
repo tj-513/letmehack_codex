@@ -14,6 +14,10 @@ public class FacultyService {
     public Faculty createFaculty(Faculty faculty) {
 
         //do validations here
+        Faculty existing = facultyRespository.findByName(faculty.getName());
+        if(existing == null){
+            throw new FacultyExistsException();
+        }
         facultyRespository.save(faculty);
         return faculty;
     }

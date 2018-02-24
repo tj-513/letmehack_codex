@@ -7,6 +7,5 @@ import org.springframework.data.repository.CrudRepository;
  * Created by TJR on 2/24/2018.
  */
 public interface FacultyRespository extends CrudRepository<Faculty, Long> {
-
-
+    Faculty findByName(String name);
 }

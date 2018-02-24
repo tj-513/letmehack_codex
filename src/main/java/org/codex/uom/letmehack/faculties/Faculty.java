@@ -2,11 +2,9 @@ package org.codex.uom.letmehack.faculties;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.codex.uom.letmehack.common.Constants;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by TJR on 2/24/2018.
@@ -20,6 +18,7 @@ public class Faculty {
     @JsonProperty("name")
     private String name;
 
+    @Transient
     private String self;
 
     public String getName() {
@@ -32,10 +31,9 @@ public class Faculty {
 
 
     public String getSelf() {
-        return self;
+        return Constants.serverUrl + "/api/faculties/" + id;
     }
 
-    @JsonIgnore
     public void setSelf(String self) {
         this.self = self;
     }

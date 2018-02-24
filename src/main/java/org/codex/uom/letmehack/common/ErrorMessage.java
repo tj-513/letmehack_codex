@@ -1,18 +1,22 @@
 package org.codex.uom.letmehack.common;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Created by TJR on 2/24/2018.
  */
 public class ErrorMessage {
-    private String status;
+    private int status;
+    @JsonProperty("message")
     private String errorMessage;
+    @JsonProperty("developerMessage")
     private String developerMessage;
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

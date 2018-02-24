@@ -35,7 +35,7 @@ public class AvatarController {
             return new ResponseEntity<SuccessMessage>(message, HttpStatus.OK);
         }catch (Exception e){
             ErrorMessage errorMessage = new ErrorMessage();
-            errorMessage.setStatus("500");
+            errorMessage.setStatus(500);
             errorMessage.setErrorMessage("An error occurred while saving file");
             errorMessage.setDeveloperMessage(e.toString());
             return new ResponseEntity<ErrorMessage>(errorMessage, HttpStatus.valueOf(500));
