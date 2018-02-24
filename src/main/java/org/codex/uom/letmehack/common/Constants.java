@@ -5,4 +5,5 @@ package org.codex.uom.letmehack.common;
  */
 public interface Constants {
     String serverUrl = "http://localhost:8080" ;
+    String AVATAR_DIRECTORY = "users/avatars";
 }

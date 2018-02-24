@@ -22,6 +22,8 @@ public class User {
     @JsonProperty("email")
     private String email;
 
+    @JsonIgnore
+    private String avatarUrl;
 
     private String self;
 
@@ -57,5 +59,11 @@ public class User {
         this.id = id;
     }
 
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
 
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
 }
