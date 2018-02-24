@@ -19,10 +19,10 @@ public class UserController {
     private UserService userService ;
     JdbcTemplate sql;
     @PostMapping()
-    public ResponseEntity<?> createUser(User user) {
+    public ResponseEntity<?> createUser(@RequestBody User user) {
        try {
            user = userService.createUser(user);
-           return new ResponseEntity<User>(user, HttpStatus.OK);
+           return new ResponseEntity<User>(user, HttpStatus.CREATED);
        }catch (Exception e){
            ErrorMessage message = new ErrorMessage();
            message.setDeveloperMessage("set appropriate messsage here");
