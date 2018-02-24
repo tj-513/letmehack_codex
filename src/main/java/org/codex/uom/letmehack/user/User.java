@@ -22,6 +22,7 @@ public class User {
     @JsonProperty("email")
     private String email;
 
+
     private String self;
 
     public String getName() {
@@ -55,4 +56,6 @@ public class User {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }

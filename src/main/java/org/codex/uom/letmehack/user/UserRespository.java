@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
  */
 public interface UserRespository extends CrudRepository<User, Long>{
 
+
+
+
 }
