@@ -15,6 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 public class GreetingController {
     @GetMapping("/api")
     public ResponseEntity<?> greeting() {
-        return new ResponseEntity<Greeting>(new Greeting(),HttpStatus.CREATED);
+        return new ResponseEntity<Greeting>(new Greeting(),HttpStatus.OK);
     }
 }
