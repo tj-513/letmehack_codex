@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * Created by TJR on 2/24/2018.
  */
 @RestController
+@CrossOrigin(origins = {"http://localhost:8090"}, allowCredentials = "false")
 public class GreetingController {
     @CrossOrigin(origins = { "http://localhost:8090" }, allowCredentials = "false")
     @GetMapping("/api")
